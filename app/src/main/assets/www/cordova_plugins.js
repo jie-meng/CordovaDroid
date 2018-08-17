@@ -15,6 +15,14 @@ module.exports = [
       "merges": [
         "navigator.notification"
       ]
+    },
+    {
+      "id": "cordova-plugin-appinfo.appinfo",
+      "file": "plugins/cordova-plugin-appinfo/www/appinfo.js",
+      "pluginId": "cordova-plugin-appinfo",
+      "merges": [
+        "navigator.appinfo"
+      ]
     }
 ];
 module.exports.metadata = 

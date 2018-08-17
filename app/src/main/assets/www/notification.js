@@ -1,4 +1,4 @@
 function onDeviceReady() {
-    navigator.notification.alert('This is message', function() {}, 'Title', 'CLICK');
+    navigator.notification.alert(navigator.appinfo.versionName, function() {}, navigator.appinfo.name, 'CLICK');
 }
 document.addEventListener("deviceready", onDeviceReady, false);
