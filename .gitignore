@@ -258,3 +258,7 @@ pip-selfcheck.json
 
 # Scripts
 __pycache__/
+
+# node
+node_modules/
+/web/www/bundle.js
