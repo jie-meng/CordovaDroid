@@ -10,9 +10,56 @@ android {
         versionName "1.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs {
+        debug {
+            storeFile file("keystore/debug.keystore")
+            storePassword "12345678"
+            keyAlias "debug.keystore"
+            keyPassword "12345678"
+        }
+
+        qa {
+            storeFile file("keystore/debug.keystore")
+            storePassword "12345678"
+            keyAlias "debug.keystore"
+            keyPassword "12345678"
+        }
+
+        prod {
+            storeFile file("keystore/debug.keystore")
+            storePassword "12345678"
+            keyAlias "debug.keystore"
+            keyPassword "12345678"
+        }
+    }
+
+    flavorDimensions "audience"
+    productFlavors {
+        qa {
+            dimension "audience"
+            applicationIdSuffix ".qa"
+            signingConfig signingConfigs.qa
+
+            resValue 'string', 'account_type', 'com.jmengxy.cordovadroid.qa'
+        }
+
+        prod {
+            dimension "audience"
+            signingConfig signingConfigs.prod
+
+            resValue 'string', 'account_type', 'com.jmengxy.cordovadroid'
+        }
+    }
+
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+            multiDexEnabled true
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -23,7 +70,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'

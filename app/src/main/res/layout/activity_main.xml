@@ -12,4 +12,10 @@
         android:layout_height="wrap_content"
         android:text="Index" />
 
+    <Button
+        android:id="@+id/react"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="React" />
+
 </LinearLayout>

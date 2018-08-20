@@ -14,6 +14,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, IndexActivity.class));
     }
 
+    @OnClick(R.id.react)
+    void clickReact() {
+        startActivity(new Intent(this, ReactActivity.class));
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
