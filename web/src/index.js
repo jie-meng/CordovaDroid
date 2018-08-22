@@ -11,8 +11,8 @@ ReactDOM.render((
         <div>
             <Route path="/" component={App} />
             <Route path="/home" component={Home} />
-            <Route path="/host" component={Host} />
-            <Route path="/guest" component={Guest} />
+            <Route path="/home/host" component={Host} />
+            <Route path="/home/guest" component={Guest} />
         </div>
     </Router>
 ), document.getElementById('root'));
