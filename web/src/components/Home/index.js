@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router';
 import classNames from 'classnames/bind';
 import styles from './Home.scss'
+import Storage from '../../data/Storage';
 
 const cx = classNames.bind(styles);
 
@@ -18,11 +19,13 @@ class Home extends React.Component {
         return <Redirect to={navigate} push={true} />
     }
 
+    const logo = Storage.getLocalhostUrl() + '/images/logo.svg'
+
     if (window.location.href.endsWith('/home')) {
         return (
               <div className={ cx('home') }>
                 <header className={ cx('Home-header') }>
-                  <img src='images/logo.svg' className={ cx('Home-logo') } alt="logo" />
+                  <img src= {logo} className={ cx('Home-logo') } alt="logo" />
                   <h1 className={ cx('Home-title') }>Welcome to React</h1>
                 </header>
                 <p className={ cx('Home-intro') }>

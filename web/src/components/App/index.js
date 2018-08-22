@@ -6,8 +6,10 @@ class App extends Component {
     constructor(props) {
       super(props);
       this.state = { navigate: null };
-      if (window.location.href.endsWith('react.html')) {
-        this.state.navigate = '/home';
+      if (window.location.href.endsWith('.html')) {
+        if (window.location.href.endsWith('react.html')) {
+            this.state.navigate = '/home';
+        }
       }
     }
 
